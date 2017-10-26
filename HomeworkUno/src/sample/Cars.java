@@ -15,7 +15,7 @@ public class Cars
     }
 
     //Get Model, Make, and Speed
-    public int getModel()
+    public int getModel(int year)
     {
         return yearModel;
     }

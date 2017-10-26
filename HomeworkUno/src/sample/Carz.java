@@ -1,55 +1,22 @@
 package sample;
 
-import javax.swing.*;
+import java.util.Random;
 
 public class Carz {
-    private Object model;
-
-    public Carz(String car, int i) {
-
-        String input, make;
-        int model, yearModel, year, speed;
-
-        Carz myCarz = new Carz("Car", 1998);
-
-        make = JOptionPane.showInputDialog("Who is the maker of your car");
-        myCarz.getMake(make);
-
-        year = Integer.parseInt(JOptionPane.showInputDialog("What is the model of your car?"));
-        myCarz.getModel(year);
-
-        input = JOptionPane.showInputDialog("What speed is your car going?");
-        i = Integer.parseInt(input);
-        myCarz.setSpeed(i);
-
-        for(int n = 0;n<5;n++);
-        {
-            myCarz.acceleratedSpeed();
-            System.out.println();
-            System.out.println("The " + " " +
-            myCarz.getModel() + " " + myCarz.getMake() +
-            " is gradually accelerating. ");
-        }
-
-        System.out.print("Your current speed");
-
-
-
+    public Carz() {
 
     }
+    public static void carz() {
+        boolean tires = true;
+        boolean doors = true;
+        String[] location = new String[]{"left lane", "middle lane", "right lane"};
+        String moving = location[(new Random()).nextInt(location.length)];
+        String[] color = new String[]{"Red", "Blue", "Yellow", "Green", "Black", "White", "Silver"};
+        String hover = color[(new Random()).nextInt(color.length)];
+        String[] model = new String[]{"Ford", "Honda", "Chevy", "Toyota"};
+        String type = model[(new Random()).nextInt(model.length)];
+        System.out.println("A " + hover + " " + type + " is in the " + moving + " of ");
 
-    private void acceleratedSpeed() {
-    }
 
-    public Object getModel(int year) {
-        return model;
-    }
-
-    public Object getMake(Object make) {
-        return make;
-    }
-
-    public void setSpeed(int speed) {
-        this.speed = speed;
     }
 }
